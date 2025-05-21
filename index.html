@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shane Kian Flores Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <div class="nav-left">
+      <div class="logo-circle">S</div>
+      <div class="brand-name" id="brandName">Shane Kian Flores</div>
+      <div class="nav-links">
+        <a href="#about" tabindex="0">About</a>
+        <a href="#skills" tabindex="0">My Skills</a>
+        <a href="#portfolio" tabindex="0">My Project</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a class="contact-btn" href="#contact" tabindex="0">Contact</a>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <div></div><div></div><div></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="menu" aria-hidden="true">
+    <a href="#about" role="menuitem" tabindex="-1">About</a>
+    <a href="#skills" role="menuitem" tabindex="-1">My Skills</a>
+    <a href="#portfolio" role="menuitem" tabindex="-1">My Project</a>
+    <a href="#contact" role="menuitem" tabindex="-1">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <section class="introduction">
+    <div class="intro-text">
+      <h2>Hi! I'm Shane Kian,</h2>
+      <h3>I'm a Creative Developer and Designer</h3>
+      <p>I'm a developer who loves coding and building modern web applications. I enjoy learning new technologies and turning ideas into clean, functional projects.</p>
+      <a class="work-btn" href="#portfolio">See My Work</a>
+    </div>
+    <div class="intro-image">
+      <img src="my profile2.jpg" alt="Shane Kian Flores" />
+    </div>
+  </section>
+  <br> <br> <br> <br> <br> <br> <br> 
+  
+  <section class="about-me" id="about">
+    <h2>About Me</h2>
+    <hr>
+    <br>
+    <p>Hi, I’m Shane Kian Flores – a developer with a passion for crafting modern web applications. I thrive on turning ideas into clean, functional projects that blend creative design with powerful code. I love diving into the latest technologies, constantly refining my skills, and pushing the boundaries of what the web can do. Outside of code, you'll find me cruising on my motorcycle, enjoying the freedom of the open road – a perfect balance between structure and spontaneity. Let’s connect and build something amazing together!</p>
+    <h2>Education</h2>
+    <hr>
+    <!-- Responsive left-desktop / center-mobile image -->
+    <div class="education-image">
+      <img src="gnclogo1.png" alt="Education Visual">
+    </div>
+    <div class="clear-fix"></div>
+    <br>
+    <p>Currently studying at Guagua National Colleges <br>✔️ PMI Project Management <br>✔️ Completing Python Essentials 2 <br>✔️ Course Completion Database </p> 
+    <p></p>
+    <h2>Certificate and Badge</h2>
+    <hr>
+    <div class="about-pictures">
+        <img src="PMI Project Management Ready.jpg" alt="Project Management Certificate" />
+        <img src="Python Essentials Certificate.jpg" alt="Python Essentials Certificate" />
+        <img src="ShaneAwardofcourseCertificate.jpg" alt="Shane Award of Course Certificate"/>
+        <img src="Badge 1.png" alt="PMI Badge"/>
+        <img src="Badge 2.png" alt="Cisco Badge"/>
+
+
+    </div>
+    <br>
+  </section>
+
+  <div id="imageModal" class="modal">
+    <span class="close" aria-label="Close modal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Modal Image">
+  </div>
+  <br> <br> <br> <br> <br>
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <hr />
+    <br>
+    <p>
+        <span>HTML</span> 
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span> 
+        <span>UX-UI Design</span>
+    </p>
+    <br> <br> <br> <br> <br> 
+
+    <!-- My Portfolio Section -->
+<section id="portfolio">
+  <h2>My Portfolio</h2>
+  <hr>
+  <br>
+  <p>Discover a showcase of my highlighted projects, ranging from responsive websites to interactive games. Each piece demonstrates my abilities in design, user experience, and development.</p>
+
+  <div class="portfolio-gallery">
+    <div class="project-card">
+      <img src="Group 20.png" alt="Main Character">
+      <div class="project-buttons">
+        <a href="https://github.com/Zylane14/Project-Rebirth" class="btn-green" target="_blank">Github</a>
+        <a href="https://github.com" class="btn-green" target="_blank">Live Demo</a>
+      </div>
+   </div>
+
+    <div class="project-card">
+      <img src="Alren's Ukay Ukay.png" alt="Interactive Game Project">
+      <div class="project-buttons">
+        <a href="https://github.com/Inori-luna/Alrens-Ukay-Ukay-Visual" class="btn-green" target="_blank">Github</a>
+        <a href="https://www.figma.com/proto/tuHA3x927xpd83guPUbNic/Visual?node-id=94-2&t=uuEqe5yGmYcKd2nO-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" class="btn-green" target="_blank">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+<br> <br> <br> <br> <br>
+<footer class="footer" id="contact">
+  <div class="footer-logo">
+    <div class="logo-circle">S</div>
+  </div>
+  <div class="footer-text">
+    <h3>Contact Me!</h3>
+    <p>Whether you have a project in mind or just want to start a conversation, I’m always open to new connections. Let’s build something great together.</p>
+  </div>
+  <div class="footer-social">
+    <a href="https://github.com/Inori-luna" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+    <a href="https://www.facebook.com/Kian.Flores.56/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="https://www.instagram.com/shanekianluna/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+  </div>
+  <br>
+  <br>
+  <p style="margin-top: 2rem; font-size: 0.9rem; color: #aaa;">
+    Copyright © 2025 Personal Portfolio By Shane Kian Flores.
+  </p>
+</footer>
+
+<a href="#" class="back-to-top" aria-label="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

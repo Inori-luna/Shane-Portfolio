@@ -1,0 +1,602 @@
+ html {
+  scroll-padding-top: 80px; /* equal to or slightly more than your nav height */
+}
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+    color: #f0f0f0;
+    min-height: 100vh;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  nav {
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo circle with S */
+  .logo-circle {
+    width: 40px;
+    height: 40px;
+    background: #1DB954; /* Spotify green for cool look */
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    flex-shrink: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Brand name text */
+  .brand-name {
+    font-weight: 700;
+    color: #1DB954;
+    margin-left: 0.75rem;
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  /* Nav links container PC */
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: none;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    color: #1DB954;
+  }
+
+  /* Contact button on right */
+  .contact-btn {
+    background-color: #1DB954;
+    padding: 0.5rem 1.2rem;
+    border-radius: 28px;
+    font-weight: 700;
+    color: #000;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+  .contact-btn:hover,
+  .contact-btn:focus {
+    background-color: #17a342;
+    color: white;
+  }
+
+  /* Left part of nav (logo + brand + links) */
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Right part of nav */
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hamburger button for mobile */
+  .hamburger {
+    width: 30px;
+    height: 21px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .hamburger div {
+    width: 100%;
+    height: 3.5px;
+    background-color: #1DB954;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Sliding menu on mobile */
+  .mobile-menu {
+    background-color: rgba(30, 30, 30, 0.97);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    font-weight: 700;
+    font-size: 1.1rem;
+    user-select: none;
+    z-index: 999;
+  }
+  .mobile-menu.open {
+    max-height: 300px; /* enough for links */
+  }
+  .mobile-menu a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #1DB954aa;
+    color: #1DB954;
+  }
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+  .mobile-menu a:hover,
+  .mobile-menu a:focus {
+    background-color: #1DB954;
+    color: #000;
+    outline: none;
+  }
+
+  /* Responsive styling - MOBILE */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 0.75rem 1rem;
+    }
+    /* Logo text change to Shane only */
+    .brand-name {
+      margin-left: 0.5rem;
+      font-size: 1.15rem;
+    }
+    /* Hide nav-links and contact button on mobile */
+    .nav-links,
+    .contact-btn {
+      display: none;
+    }
+    /* Show hamburger */
+    .hamburger {
+      display: flex;
+    }
+    /* Left part shrinks to logo + Shane */
+    .nav-left {
+      gap: 0.7rem;
+    }
+    /* New mobile styles for introduction section */
+    .introduction {
+      flex-direction: column;
+      margin-top: 1.5rem;
+    }
+    .intro-text {
+      padding-right: 0;
+      text-align: center; /* Center text on mobile */
+    }
+    .intro-text h2 {
+      font-size: 1.6rem;
+    }
+    .intro-text h3 {
+      font-size: 1.2rem;
+    }
+    .intro-text p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .work-btn {
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .intro-image {
+      width: 100%;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    .intro-image img {
+      width: 80%;
+      border-radius: 10px;
+    }
+    /* New mobile styles for About Me and Skills sections */
+    .about-me, .skills {
+      margin-top: 2rem;
+      text-align: center; /* Center text on mobile */
+    }
+    .about-me h2, .skills h2 {
+      font-size: 1.6rem;
+    }
+    .about-me p, .skills p {
+      font-size: 1rem;
+    }
+    hr {
+      border: 1px solid #1DB954;
+      margin-bottom: 1rem;
+    }
+    /* Skills section styling */
+    .skills span {
+      display: inline-block; /* Ensure spans are inline */
+      margin: 0.2rem; /* Add margin for spacing */
+    }
+  }
+
+  /* Add some margin below nav so content not hidden behind */
+  main {
+    margin-top: 70px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+
+  /* Sample main content styling */
+  h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+  }
+
+ /* Introduction section styling */
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.intro-text {
+  flex: 1;
+  padding-right: 2rem; /* Space between text and image */
+}
+
+.intro-text h2 {
+  font-size: 3rem; /* Increased font size for the heading */
+  color: #1DB954;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text h3 {
+  font-size: 2rem; /* Increased font size for the subheading */
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem; /* Increased font size for the paragraph */
+  margin-bottom: 1.5rem;
+}
+
+/* About Me section styling */
+.about-me p {
+      font-size: 1.2rem; /* Adjust this value to your desired font size */
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 1.5rem;
+  
+}
+.about-me h2{
+  font-size: 350%;
+}
+
+  .work-btn {
+    background-color: #1DB954;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .work-btn:hover {
+    background-color: #17a342;
+    color: white;
+  }
+
+  .intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: add some rounding to the image */
+  }
+
+  /* Green border for skills spans */
+  .skills span {
+    border: 2px solid #1DB954; /* Spotify green */
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    margin: 0.2rem 0.5rem 0.2rem 0;
+    display: inline-block;
+  }
+
+  .skills span:hover {
+    background-color: #17a342; /* Slightly darker green */
+    color: #f0f0f0; /* Light gray text */
+  }
+
+  .about-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .about-pictures img {
+    width: calc(33% - 1rem);
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .about-pictures img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  }
+  /* Image Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease;
+  }
+  .modal-content:hover {
+    transform: scale(1.02);
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+  }
+
+  .skills h2{
+    font-size: 350%;
+  }
+
+  
+  /* GNC LOGO */
+ .education-image {
+  float: left;
+  margin: 1rem 1.5rem 1.5rem -2rem; /* Adjusted left margin */
+  max-width: 300px;
+}
+
+.education-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Clear fix to avoid layout issues */
+.clear-fix {
+  clear: both;
+}
+
+
+/* ✅ Mobile behavior: center the image */
+@media (max-width: 768px) {
+  .education-image {
+    float: none;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .education-image img {
+    width: 80%; /* Adjust to taste */
+  }
+}
+
+/* PORTFOLIO */
+.portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures aspect ratio is preserved by cropping */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btn-green {
+  background-color: #1DB954;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+  background-color: #17a342;
+  color: white;
+}
+
+.portfolio h2{
+  font-size: 1.2rem; /* Adjust this value to your desired font size */
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+/* Mobile responsive behavior */
+@media (max-width: 768px) {
+  .portfolio-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: none;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-logo .logo-circle {
+  margin: 0 auto 1rem;
+  width: 50px;
+  height: 50px;
+  font-size: 1.75rem;
+}
+
+.footer-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1DB954;
+}
+
+.footer-text p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #ccc;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.footer-social a:hover img {
+  transform: scale(1.15);
+  filter: brightness(0) saturate(100%) invert(52%) sepia(83%) saturate(369%) hue-rotate(90deg) brightness(98%) contrast(95%);
+}
+
+@media (max-width: 600px) {
+  .footer-text p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px; /* Back to right side */
+  width: 50px;
+  height: 50px;
+  background-color: #32CD32; /* Bright green (LimeGreen) */
+  color: black;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #28a428; /* Slightly darker green on hover */
+  transform: scale(1.1);
+  color: white;
+}
+
+.back-to-top i {
+  line-height: 50px; /* Vertically center the icon */
+}
